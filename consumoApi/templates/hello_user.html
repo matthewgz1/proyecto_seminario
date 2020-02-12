@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Lista de datos</h1>
+
+<!-- 	<ol>
+		{% for data in context.name %}
+		<li>{{data}}</li>
+		{% endfor %}
+		
+	</ol> -->
+
+	<table>
+		<thead>
+			<th>ID</th>
+			<th>Monto</th>
+			<th>Tipo</th>
+			<th>Fecha</th>
+		</thead>
+		<tbody>
+			{% for data in context %}
+			<tr>
+				<td>{{data.id}}</td>
+				<td>{{data.monto}}</td>
+				<td>{{data.tipo}}</td>
+				<td>{{data.fecha}}</td>
+				<td>
+					<a href="{% url 'borrarMovimiento' data.id %}">Eliminar</a>
+				</td>
+				<td>
+					<a href="{% url 'actualizarMovimiento' data.id %}">Actualizar</a>
+				</td>
+			</tr>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+
+	
+
+
+</body>
+</html>
